@@ -573,8 +573,7 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
     const char *file_all_charsets_label = N_("&All charsets");
 #endif
     const char *file_case_label = N_("Cas&e sensitive");
-    const char *file_skip_hidden_label = N_("S&kip hidden");
-
+    
     /* file content */
     const char *content_content_label = N_("Content:");
     const char *content_use_label = N_("Sea&rch for content");
@@ -1380,8 +1379,9 @@ do_search (WDialog * h)
                     {
 			is_dir = TRUE;
                         push_directory (tmp_vpath);
-                    else
+                    } else {
                         vfs_path_free (tmp_vpath);
+		    }
                 }
             }
 
